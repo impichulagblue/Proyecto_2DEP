@@ -1,0 +1,45 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0a0a1a;
+  color: #e0e0ff;
+  font-family: 'Press Start 2P', cursive;
+  min-height: 100vh;
+  border-left: 2px solid #ffcc00;
+  border-right: 2px solid #ffcc00;
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0a0a1a;
+  color: #ffcc00;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.loading-spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ffcc00;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body {
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive;
+}

@@ -1,0 +1,129 @@
+/* Estilo de Autenticación - Tema de Juego Retro */
+.auth-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.auth-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(10, 10, 30, 0.8);
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
+              0 0 15px rgba(255, 204, 0, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s;
+}
+
+.auth-user:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(255, 204, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.auth-user-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+}
+
+.auth-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.auth-user-name {
+  color: #ffcc00;
+  font-size: 0.7rem;
+  text-shadow: 0 0 5px #ffcc00,
+               1px 1px 2px #000;
+  white-space: nowrap;
+}
+
+.auth-button {
+  background: linear-gradient(145deg, #ff3333, #ff6600);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  transition: all 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2),
+              0 0 10px rgba(255, 51, 51, 0.3);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 102, 0, 0.4),
+              0 0 15px rgba(255, 51, 51, 0.5);
+}
+
+.auth-error {
+  margin-top: 10px;
+  color: #ff3333;
+  background: rgba(10, 10, 30, 0.9);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  border-left: 4px solid #ff3333;
+  max-width: 250px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 3px rgba(255, 51, 51, 0.5);
+}
+
+/* Efecto de carga */
+.auth-loading {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffcc00;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .auth-container {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .auth-user {
+    padding: 8px 15px;
+    gap: 10px;
+  }
+  
+  .auth-user-photo {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .auth-user-name {
+    font-size: 0.6rem;
+  }
+  
+  .auth-button {
+    padding: 6px 12px;
+    font-size: 0.5rem;
+  }
+}

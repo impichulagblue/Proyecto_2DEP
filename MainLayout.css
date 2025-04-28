@@ -1,0 +1,11 @@
+/* MainLayout.css */
+.main-layout {
+  min-height: 100vh;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="3" height="3" x="20" y="20" fill="rgba(0,0,0,0.05)"/></svg>') repeat;
+  position: relative;
+}
+
+.content-container {
+  padding: 20px;
+  padding-top: 80px;
+}

@@ -1,0 +1,324 @@
+/* Estilo Cyberpunk/Neon para LoginPage */
+.cyberpunk-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a0a1a;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+  font-family: 'Rajdhani', 'Arial Narrow', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent);
+  animation: scanline 3s linear infinite;
+  z-index: 1;
+}
+
+.cyberpunk-login-box {
+  background: rgba(10, 10, 30, 0.9);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 
+    0 0 25px rgba(0, 255, 255, 0.4),
+    0 0 50px rgba(255, 0, 255, 0.2);
+  border: 2px solid #00ffff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.cyberpunk-login-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotateGlow 8s linear infinite;
+  z-index: -1;
+}
+
+.cyberpunk-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.cyberpunk-header h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.cyberpunk-subtitle {
+  font-size: 16px;
+  color: #a0a0ff;
+  margin-bottom: 0;
+}
+
+.cyberpunk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #00ffff;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.cyberpunk-input {
+  background: rgba(0, 20, 40, 0.8);
+  border: 2px solid #00ffff;
+  border-radius: 6px;
+  padding: 12px 15px;
+  color: #e0e0ff;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.cyberpunk-input:focus {
+  outline: none;
+  border-color: #ff00ff;
+  box-shadow: 
+    inset 0 0 15px rgba(255, 0, 255, 0.2),
+    0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.cyberpunk-input::placeholder {
+  color: #606080;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cyberpunk-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cyberpunk-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cyberpunk-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.cyberpunk-button:hover::before {
+  transform: rotate(30deg) translate(10%, 10%);
+}
+
+.primary {
+  background: linear-gradient(145deg, #00ffff, #ff00ff);
+  color: #0a0a1a;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.primary:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+.secondary {
+  background: rgba(0, 20, 40, 0.8);
+  color: #00ffff;
+  border: 2px solid #00ffff;
+}
+
+.secondary:hover:not(:disabled) {
+  background: rgba(0, 30, 60, 0.8);
+  color: #ff00ff;
+  border-color: #ff00ff;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+}
+
+.google {
+  background: #0a0a1a;
+  color: #e0e0ff;
+  border: 2px solid #4285F4;
+}
+
+.google:hover:not(:disabled) {
+  background: #1a1a3a;
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.6);
+}
+
+.twitter {
+  background: #0a0a1a;
+  color: #e0e0ff;
+  border: 2px solid #1DA1F2;
+}
+
+.twitter:hover:not(:disabled) {
+  background: #1a1a3a;
+  box-shadow: 0 0 15px rgba(29, 161, 242, 0.6);
+}
+
+.text-button {
+  background: transparent;
+  color: #00ffff;
+  padding: 0;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.text-button:hover:not(:disabled) {
+  color: #ff00ff;
+  transform: none;
+  background: transparent;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  color: #606080;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-prompt {
+  text-align: center;
+  margin-top: 20px;
+  color: #a0a0ff;
+  font-size: 14px;
+}
+
+.cyberpunk-error {
+  color: #ff5555;
+  background: rgba(255, 0, 0, 0.15);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 20px;
+  border: 1px solid #ff5555;
+  text-align: center;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(255, 85, 85, 0.5);
+}
+
+.cyberpunk-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #606080;
+}
+
+.verification-button {
+  background: linear-gradient(145deg, #ff00ff, #00ffff);
+  color: #0a0a1a;
+  margin-top: 10px;
+}
+
+/* Animaciones */
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cyberpunk-login-box {
+    padding: 30px;
+    margin: 20px;
+  }
+  
+  .cyberpunk-header h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyberpunk-login-box {
+    padding: 25px 20px;
+  }
+  
+  .cyberpunk-header h1 {
+    font-size: 24px;
+  }
+  
+  .cyberpunk-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
